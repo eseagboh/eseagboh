@@ -1,0 +1,17 @@
+import random
+
+welcomeMessage = input("Welcome to Random Name Draw! Enter as many names as you would like to choose from. Press enter when you are finished adding names.")
+print(welcomeMessage) 
+
+while True:
+    nameInput = input("Please add a name or just press enter to quit:" )
+    if nameInput == '':
+        print('You are finished adding names')
+        print('Time to draw!')
+    else:
+      print(nameInput, 'has been added to the drawing')
+      nameList = []
+      for index in range(len(nameList)):
+          nameList[index] = nameList.append(nameInput)
+
+    print(nameList)
