@@ -1,17 +1,37 @@
+"""
+Name: Randomized Name Draw.py
+Created By: Ese Agboh
+Date Last Modified: Dec 9, 2023
+
+The purpose of this program is to simulate a randomized name drawing sequence using code written in Python. The user 
+is able to add an indefinite number of names and the program randomly selects from the list of names. Randomized
+name drawing is often demonstrated in the real-world during raffles and out of the hat name draws.
+
+"""
+
 import random
+
 
 welcomeMessage = input("Welcome to Random Name Draw! Enter as many names as you would like to choose from. Press enter when you are finished adding names.")
 print(welcomeMessage) 
 
+nameList = ['Tom', 'Nance', 'John', 'Kyle']
+
 while True:
-    nameInput = input("Please add a name or just press enter to quit:" )
+    nameInput = input("Please add a name or just press enter to quit:")
     if nameInput == '':
         print('You are finished adding names')
-        print('Time to draw!')
+        userChoice = input('Ready to choose? Y/N')
+        if userChoice == 'Y':
+           break
     else:
       print(nameInput, 'has been added to the drawing')
-      nameList = []
-      for index in range(len(nameList)):
-          nameList[index] = nameList.append(nameInput)
+      nameList.append(nameInput)
+      print(nameList)
 
-    print(nameList)
+      
+def nameDraw():
+  return random.choice(nameList)
+print(nameDraw())
+    
+        
