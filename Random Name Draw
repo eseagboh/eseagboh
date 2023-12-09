@@ -11,26 +11,32 @@ name drawing is often demonstrated in the real-world during raffles and out of t
 
 import random
 
+"""Imports the random module in order to randomly choose from an index in the user-generated list"""
 
 welcomeMessage = input("Welcome to Random Name Draw! Enter as many names as you would like to choose from. Press enter when you are finished adding names.")
 print(welcomeMessage) 
 
-nameList = ['Tom', 'Nance', 'John', 'Kyle']
+"""This is the welcome message the end-user sees once they open the program"""
 
-while True:
-    nameInput = input("Please add a name or just press enter to quit:")
+nameList = []
+
+"""Declares a list that will be added to by the end-user. This list is what the random module will draw from when it is time to select a name"""
+
+
+while True:                                                                """Use a While loop to repeat the name-adding process until the user decides to stop adding names"""
+    nameInput = input("Please add a name or just press enter to quit:")    """The user is prompted to add names that will ultimately be stored in nameList"""
     if nameInput == '':
-        print('You are finished adding names')
-        userChoice = input('Ready to choose? Y/N')
+        print('You are finished adding names')                             
+        userChoice = input('Ready to choose? Y/N')                         """After the user presses enter, the program prompts the user to confirm that they are ready to choose a name"""
         if userChoice == 'Y':
-           break
+           break                                                          """Stops running the While loop once the user is ready to choose a name"""
     else:
-      print(nameInput, 'has been added to the drawing')
-      nameList.append(nameInput)
-      print(nameList)
+      print(nameInput, 'has been added to the drawing')                   """Notifies the user whenever a name is added"""
+      nameList.append(nameInput)                                          """Adds the user input to the name list that the program will draw from"""
+      print(nameList)                                                     """Shows the user what names have been added so far"""
 
       
-def nameDraw():
+def nameDraw():                                                           """Define a function that will randomly draw a name from the list using the random module imported at the beginning of the program"""
   return random.choice(nameList)
 print(nameDraw())
     
