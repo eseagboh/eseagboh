@@ -36,8 +36,11 @@ while True:                                                                """Us
       print(nameList)                                                     """Shows the user what names have been added so far"""
 
       
-def nameDraw():                                                           """Define a function that will randomly draw a name from the list using the random module imported at the beginning of the program"""
-  return random.choice(nameList)
+def nameDraw():                                                          """Define a function that will randomly draw a name from the list using the random module imported at the beginning of the program"""
+     if len(nameLis) < 2:                                                """Implement an error catching technique to make sure user enters more than one name"""
+        print('Please add another name')
+     else:
+        return random.choice(nameList)
 print(nameDraw())
     
         
